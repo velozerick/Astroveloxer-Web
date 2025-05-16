@@ -1,68 +1,76 @@
-# CodeIgniter 4 Application Starter
+# 🌌 Astroveloxer
 
-## What is CodeIgniter?
+**Astroveloxer** es una plataforma web profesional diseñada para la divulgación, enseñanza y participación en el campo de la astrofotografía. Dirigida tanto a principiantes como a entusiastas del cielo nocturno, ofrece recursos formativos, comunidad y herramientas para explorar y compartir el universo.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+---
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## 🔭 Descripción general
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+Astroveloxer combina una interfaz moderna con funcionalidades dinámicas para brindar a los usuarios:
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- Acceso a manuales personalizados sobre astrofotografía.
+- Un calendario astronómico con eventos importantes.
+- Galerías colaborativas donde los usuarios pueden compartir sus capturas.
+- Un foro para resolver dudas y compartir conocimientos.
+- Un sistema de usuarios con roles diferenciados (visitante, usuario, administrador).
 
-## Installation & updates
+---
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## 🧱 Estructura del proyecto
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+| Carpeta / Archivo | Descripción |
+|-------------------|-------------|
+| `app/`            | Controladores, modelos, vistas y configuración de la lógica de negocio. |
+| `public/`         | Archivos accesibles públicamente: estilos, scripts, imágenes, index. |
+| `writable/`       | Logs, cachés y archivos generados por el sistema. No se sube al repositorio. |
+| `.env`            | Configuración de entorno (entorno, base de datos, etc.). Ignorado por Git. |
+| `.gitignore`      | Exclusión de archivos sensibles o innecesarios para producción. |
+| `README.md`       | Este archivo: documentación del proyecto. |
 
-## Setup
+---
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## 🔐 Roles y permisos
 
-## Important Change with index.php
+| Rol            | Acceso                                              |
+|----------------|-----------------------------------------------------|
+| Visitante      | Visualización limitada de contenido.                |
+| Usuario        | Acceso completo a cursos, galería, foro y calendario. |
+| Administrador  | Gestión total de usuarios, contenido y sistema.     |
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+---
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+## 🚀 Funcionalidades planeadas (Roadmap)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- [x] Instalación y configuración inicial de CodeIgniter 4.
+- [ ] Creación de página de bienvenida pública (landing).
+- [ ] Sistema de autenticación (registro/login/logout).
+- [ ] Galería dinámica con imágenes de usuarios.
+- [ ] Sistema de cursos/manuales interactivos.
+- [ ] Calendario astronómico administrable.
+- [ ] Foro con comentarios, respuestas y moderación.
+- [ ] Panel de administración con control de contenido.
 
-## Repository Management
+---
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## ⚙️ Tecnologías utilizadas
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+- **PHP 8.2+** (Framework: CodeIgniter 4.6)
+- **HTML5 / CSS3 / JavaScript**
+- **MySQL** (estructura relacional para usuarios, contenido y eventos)
+- **Apache / LAMP Stack**
+- **Git + GitHub** (gestión de versiones y documentación)
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 👤 Desarrollador principal
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+**Erick Salvador Veloz González**  
+Desarrollador Web Full Stack & Astrofotógrafo  
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+---
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+## 💡 Licencia y uso
+
+Este proyecto es de código cerrado en desarrollo. Puede ser utilizado como muestra de portafolio o adaptado para fines educativos previa autorización del desarrollador.
+
