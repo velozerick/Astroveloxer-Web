@@ -8,6 +8,9 @@
 </head>
 <body>
     <div class="stars"></div>
+   
+
+
 
     <!-- Barra de Navegación -->
     <header class="header">
@@ -21,19 +24,23 @@
                 <li><a href="<?= base_url('/foro') ?>">Foro</a></li>
                 <li><a href="<?= base_url('/calendario') ?>">Calendario</a></li>
                 <li><a href="<?= base_url('/logout') ?>">Cerrar sesión</a></li>
-                <li class="welcome-message">Bienvenid@ <?= session('nombre') ?></li>
             </ul>
         </nav>
     </header>
 
+
     <main>
-        <!-- HOME SECTION -->
-        <section class="home" id="home">
-            <div class="content">
-                <h1>¿Una estrella? ¿Un planeta?</h1>
-                <p>Una página dedicada a ti, cuestionando esa pregunta.</p>
-            </div>
-        </section>
+<!-- HOME SECTION -->
+<section class="home" id="home">
+    <div class="content">
+        <div class="welcome-banner-xl">
+           
+            <h1 class="welcome-greeting">¡Bienvenid@, <?= session('nombre') ?>!</h1>
+            <p class="welcome-message">Exploremos el universo juntos</p>
+        </div>
+    </div>
+</section>
+
 
     <?php if (isset($frase)): ?>
 <section class="frase-del-dia">
