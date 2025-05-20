@@ -31,6 +31,7 @@ body {
         #FF7E5F, #6A0572, #030D3D, #000000);
     background-attachment: fixed;
     color: var(--text-color);
+    padding-top: 100px; /* Espacio para el banner + nav */
 }
 
 /* ============================
@@ -60,29 +61,64 @@ body {
     50% { opacity: 1.5; }
 }
 
+.welcome-banner-xl {
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.welcome-banner-xl .welcome-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.welcome-banner-xl .welcome-greeting {
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-banner-xl .welcome-message {
+    font-size: 2rem;
+    color: #ccc;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+
+
 /* ============================
-    Barra de Navegación
+    Barra de Navegación 
 ============================ */
 .header {
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 0px; 
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.942);
     padding: var(--spacing-s) 0;
     transition: var(--transition);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-m);
 }
 
 .nav {
     list-style: none;
     display: flex;
-    gap: var(--spacing-m);
+    align-items: center;
+    gap: 70px;
+    padding: 0 var(--spacing-m);
 }
 
 .nav li {
@@ -95,7 +131,7 @@ body {
     color: #e8eaed;
     padding: var(--spacing-s) var(--spacing-m);
     transition: var(--transition);
-    text-align: center;
+    white-space: nowrap;
 }
 
 .nav a:hover {
@@ -120,15 +156,29 @@ body {
 }
 
 .nav li:first-child {
-    margin-right: 90px;
+    margin-right: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
-.nav li:nth-child(2) {
-    margin-left: 4rem;
+.nav li:first-child a {
+    color: var(--primary-color);
+    padding: var(--spacing-s) 0;
+}
+
+
+.nav li:last-child a {
+    background: rgba(187, 4, 4, 0.1);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-s) var(--spacing-l);
+}
+
+.nav li:last-child a:hover {
+    background: rgba(255, 3, 3, 0.336);
 }
 
 /* ============================
-    Menú Burger
+    Menú Burger (Responsive)
 ============================ */
 .burger {
     display: none;
@@ -140,17 +190,22 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
+    position: absolute;
+    right: var(--spacing-m);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1002;
 }
 
 .burger span {
     width: 100%;
-    height: 4px;
+    height: 3px;
     background-color: var(--text-color);
     transition: var(--transition);
 }
 
 .burger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(9px);
+    transform: rotate(45deg) translate(5px, 5px);
 }
 
 .burger.active span:nth-child(2) {
@@ -158,14 +213,14 @@ body {
 }
 
 .burger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-9px);
+    transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ============================
     Secciones Principales
 ============================ */
 .home {
-    min-height: 100vh;
+    min-height: calc(100vh - 120px); /* Ajuste para el espacio del header */
     display: flex;
     align-items: center;
 }
@@ -188,17 +243,9 @@ body {
     padding: 1rem 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* ============================
+    Frase del Día
+============================ */
 .frase-del-dia {
     display: flex;
     justify-content: center;
@@ -240,14 +287,12 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-
 /* ============================
     Cards de Cursos
 ============================ */
 .como-iniciar {
     padding: 100px 50px;
     text-align: center;
-    margin-top: 100px;
 }
 
 .heading {
@@ -423,36 +468,50 @@ body {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 100px; /* Menos espacio en móvil */
+    }
+    
+    
+    .header {
+        top: 40px;
+    }
+    
     .burger {
         display: flex;
     }
 
     .nav {
-        display: none;
+        position: fixed;
+        top: 90px;
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - 90px);
+        background-color: rgba(0, 0, 0, 0.95);
         flex-direction: column;
-        background-color: var(--dark-bg);
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        text-align: center;
+        align-items: flex-start;
+        padding: var(--spacing-l);
+        gap: var(--spacing-m);
+        transition: var(--transition);
     }
 
     .nav.active {
-        display: flex;
-    }
-
-    .nav li {
-        margin: var(--spacing-s) 0;
-    }
-
-    .nav a {
-        font-size: 1rem;
-        padding: var(--spacing-s) 0;
+        left: 0;
     }
 
     .nav li:first-child {
         margin-right: 0;
+        font-size: 1.2rem;
+    }
+    
+    .nav li:last-child {
+        margin-top: auto;
+        width: 100%;
+    }
+    
+    .nav li:last-child a {
+        display: block;
+        text-align: center;
     }
 
     .home .content h1 {
@@ -487,6 +546,18 @@ body {
 
     .image-gallery figure {
         width: 100%;
+    }
+    
+    .frase-contenedor {
+        padding: 20px;
+    }
+    
+    .frase-titulo {
+        font-size: 1.5rem;
+    }
+    
+    .frase-cita {
+        font-size: 1.2rem;
     }
 }
 
