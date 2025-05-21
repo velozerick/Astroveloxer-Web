@@ -18,3 +18,8 @@ $routes->post('/login/acceder', 'Login::acceder'); // Procesa el formulario de i
 $routes->get('/logout', 'Login::salir'); // Cierra la sesión del usuario
 
 
+
+$routes->get('/galeria', 'Galeria::index');
+$routes->get('/foro', 'Foro::index');
+$routes->get('/calendario', 'Calendario::index');
+
